@@ -8,7 +8,7 @@ import usersFromServer from './api/users';
 
 const initialTodo: Todo[] = todosFromServer.map(todo => ({
   ...todo,
-  user: usersFromServer.find(user => user.id === todo.userId),
+  user: usersFromServer.find(user => user.id === todo.userId) || null,
 }));
 
 function getNewTodoId(todos: Todo[]) {
